@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/output.css">
+    <title>Mortgage repayment calculator</title>
+</head>
+<body class="w-full min-h-screen overflow-hidden bg-white md:bg-[#e3f5fd] flex flex-col md:justify-center md:items-center font-jakarta  ">
+    <main class="w-full h-full md:h-[50%] bg-white md:bg-[#e3f5fd] flex flex-col  justify-center items-center md:rounded-tr-2xl md:rounded-br-2xl md:rounded-bl-2xl md:rounded-tl-2xl ">
+        <div class="w-[90%] h-full bg-white md:w-[50%] md:h-[600px] flex flex-col md:flex-row md:rounded-tr-2xl md:rounded-br-2xl md:rounded-bl-2xl md:rounded-tl-2xl ">
+            <section class="input-section w-full md:w-[50%] md:p-10 ">
+                <div class="flex flex-col  space-y-1 items-start md:flex-row md:space-y-0 md:justify-between" >
+                    <h1 class="text-2xl font-extrabold text-slate-900">Mortgage Calculator</h1>
+                    <button type="reset" class="underline text-sm text-slate-500">Clear All</button>
+                </div>
+                <form action="">
+                    <div class="flex flex-col space-y-2 mt-3 ">
+                    <label for="mortgage-amt" class="text-sm subheading">Mortgage Amount</label>
+                    <div class="relative w-full flex rounded-md border border-[#254253] group focus-within:border-[#ced232] ">
+                        <span class="px-4 text-gray-500 text-xl bg-[#e3f5fd] border-gray-300 rounded-bl-md rounded-tl-md  flex justify-center items-center group-focus:bg-[#ced232]">
+                            &pound;
+                        </span>
+                        <input type="number" id="mortgage-amt" class="py-2 px-3 rounded-br-md rounded-tr-md border-gray-100 border w-full outline-none text-xl font-bold focus:border-[#ced232] group-focus:bg-[#ced232]">
+
+                    </div>
+
+                                            <!-- wrapper div -->
+                    <div class="w-full flex flex-col md:flex-row space-x-2 md:space-x-0 md:space-y-2 gap-4">
+
+                                    <!-- mortgage term -->
+                         <div class="flex flex-col w-full space-y-2 mt-3 md:w-1/2   ">
+                            <label for="mortgage-term" class="subheading text-sm">Mortgage Term</label>
+                            <div class="relative  w-full flex rounded-md border border-[#254253]">
+                            <span class="px-4 text-gray-500 text-md bg-[#e3f5fd] border-gray-300 rounded-br-md rounded-tr-md  flex justify-center items-center order-1 ">
+                                years </span>
+                            <input type="number" id="mortgage-term" class="py-2 px-3 rounded-bl-md rounded-tl-md border-gray-100 border w-full outline-none text-xl font-bold">
+
+                        </div>
+                             
+                        </div>
+
+                        <div class="flex flex-col w-full space-y-2 mt-3 md:w-1/2  ">
+                        <label for="mortgage-rate" class="subheading text-sm">Mortgage rate</label>
+                        <div class="relative  w-full flex rounded-md border border-[#254253]">
+                            <span class="px-4 text-slte-700 text-md bg-[#e3f5fd] border-gray-300 rounded-br-md rounded-tr-md  flex justify-center items-center order-1 ">
+                            &percnt; </span>
+                            <input type="number" id="mortgage-rate" class="py-2 px-3 rounded-bl-md rounded-tl-md border-gray-100 border w-full outline-none text-xl font-bold">
+
+                        </div>
+
+                        </div>
+
+                    
+                        
+
+                    </div>
+
+
+                    <h2 class="text-start text-sm mb-2 subheading">Mortgage type</h2>
+
+                    <label for="repayment" class="py-3 px-2 mb-1 w-full border border-[#254253] extrabold focus-within:bg-[#fafae0] ">
+                        <input type="radio"id="repayment" name="mortgage-type" value="repayment" checked class="accent-yellow-200 peer-checked:border-yellow-200">
+                        Repayment
+                    </label>
+
+                    
+                        <label for="interest-only" class="py-3 px-2 mb-4 w-full border border-[#254253] extrabold focus-within:bg-[#fafae0]">
+                            <input type="radio" id="interest-only" name="mortgage-type" value="interest-only" class="accent-yellow-200 peer-checked:border-yellow-200" >
+                            Interest only
+                        </label>
+
+                
+
+                    
+
+
+                    <button class=" w-full md:w-[70%] bg-[#ced232] mb-3 px-2 py-3 rounded-4xl text-center font-bold flex flex-row justify-center items-center gap-3 cursor-pointer hover:bg-lime-500 transition duration-200  "> <span class="order-1">Calculate Repayments</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 order-0">
+                            <path fill-rule="evenodd" d="M6.32 1.827a49.255 49.255 0 0 1 11.36 0c1.497.174 2.57 1.46 2.57 2.93V19.5a3 3 0 0 1-3 3H6.75a3 3 0 0 1-3-3V4.757c0-1.47 1.073-2.756 2.57-2.93ZM7.5 11.25a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H8.25a.75.75 0 0 1-.75-.75v-.008Zm.75 1.5a.75.75 0 0 0-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H8.25Zm-.75 3a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H8.25a.75.75 0 0 1-.75-.75v-.008Zm.75 1.5a.75.75 0 0 0-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V18a.75.75 0 0 0-.75-.75H8.25Zm1.748-6a.75.75 0 0 1 .75-.75h.007a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.007a.75.75 0 0 1-.75-.75v-.008Zm.75 1.5a.75.75 0 0 0-.75.75v.008c0 .414.335.75.75.75h.007a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75h-.007Zm-.75 3a.75.75 0 0 1 .75-.75h.007a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.007a.75.75 0 0 1-.75-.75v-.008Zm.75 1.5a.75.75 0 0 0-.75.75v.008c0 .414.335.75.75.75h.007a.75.75 0 0 0 .75-.75V18a.75.75 0 0 0-.75-.75h-.007Zm1.754-6a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Zm.75 1.5a.75.75 0 0 0-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75h-.008Zm-.75 3a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Zm.75 1.5a.75.75 0 0 0-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V18a.75.75 0 0 0-.75-.75h-.008Zm1.748-6a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Zm.75 1.5a.75.75 0 0 0-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75h-.008Zm-8.25-6A.75.75 0 0 1 8.25 6h7.5a.75.75 0 0 1 .75.75v.75a.75.75 0 0 1-.75.75h-7.5a.75.75 0 0 1-.75-.75v-.75Zm9 9a.75.75 0 0 0-1.5 0V18a.75.75 0 0 0 1.5 0v-2.25Z" clip-rule="evenodd" />
+                          </svg>
+                          
+                    </button>
+
+                    
+
+
+
+
+                
+
+
+
+                       
+
+
+                         
+
+                        
+                        
+
+                    
+
+                           
+                    
+                    
+
+                   
+                      
+                </form>
+
+            </section>
+            <section class="display-section w-full md:w-[50%] bg-[#254253] flex flex-col justify-center items-center p-10 md:rounded-tr-2xl md:rounded-br-2xl md:rounded-bl-[70px]">
+                <img src="illustration-empty.svg" alt="" class="h-[40%] w-[40%]">
+                <p class="text-center text-3xl font-bold text-white">Results shown here</p>
+                <p class="text-center mt-5 text-[#e3f5fd]">Complete the form and click "calculate repayments" and see what your monthly repayments would be</p>
+
+            </section>
+            
+
+        </div>
+
+        
+    <footer>
+        <p>Frontend mentor &nbsp; &copy; 2025</p>
+    </footer>
+    
+    <script src="index.js">
+        
+    </script>
+</body>
+</html>
